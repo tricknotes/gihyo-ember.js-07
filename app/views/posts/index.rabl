@@ -1,6 +1,8 @@
-collection @posts, root: 'posts', object_root: false
-attributes :id, :title, :body
+object false
+node :posts do
+  @posts.as_json(only: %i(id title body))
+end
 
-child :comments, root: 'comments', object_root: false do
-  attributes :id, :text
+node :comments do
+  @comments.as_json(only: %i(id text post_id))
 end
