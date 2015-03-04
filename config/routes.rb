@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
     # CRUD
     namespace :v5 do
+      match '*path', via: :options, to: proc {|env| [200, Rails.application.config.action_dispatch.default_headers, ['ok']] }
+
       resources :posts, only: %i(index show)
       resources :comments, only: %i(create destroy)
     end
