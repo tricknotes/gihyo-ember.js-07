@@ -1,2 +1,6 @@
 object @post => :post
-attributes :id, :title, :body, :comment_ids
+attributes :id, :title, :body
+
+node :comments do |post|
+  post.comment_ids
+end
