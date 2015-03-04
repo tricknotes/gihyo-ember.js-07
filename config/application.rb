@@ -26,6 +26,7 @@ module GihyoEmberJs07
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin'   => '*',
       'Access-Control-Allow-Headers'  => 'Origin, X-Requested-With, Content-Type, Accept',
+      'Access-Control-Allow-Methods'  => 'GET, POST, PUT, DELETE, OPTIONS',
       'Access-Control-Request-Method' => '*'
     }
   end
