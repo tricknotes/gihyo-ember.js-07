@@ -1,11 +1,11 @@
 module V2
   class PostsController < ApplicationController
     def index
-      @posts = Post.all
+      @posts = MockPost.all
     end
 
     def show
-      @post = Post.find(params[:id])
+      @post = MockPost.find(params[:id])
     end
   end
 end

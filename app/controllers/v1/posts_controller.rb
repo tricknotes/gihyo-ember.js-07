@@ -1,12 +1,12 @@
 module V1
   class PostsController < ::ApplicationController
     def index
-      @posts = Post.all
-      @comments = Comment.where(post_id: @posts)
+      @posts = MockPost.all
+      @comments = @posts.flat_map {|post| post.comments }
     end
 
     def show
-      @post = Post.find(params[:id])
+      @post = MockPost.find(params[:id])
     end
   end
 end
