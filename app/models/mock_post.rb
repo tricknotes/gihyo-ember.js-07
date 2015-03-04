@@ -14,4 +14,8 @@ class MockPost < ActiveHash::Base
   create id: 2,
     title: '公式サイトの歩き方',
     body: 'http://emberjs.com/ の解説です。'
+
+  def comment_ids
+    comments.map(&:id)
+  end
 end
