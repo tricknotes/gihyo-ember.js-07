@@ -1,5 +1,7 @@
 module V5
   class CommentsController < ::ApplicationController
+    skip_before_action :verify_authenticity_token
+
     def create
       @post = Post.find(comment_params[:post])
       @comment = @post.comments.build(comment_params.except(:post))
