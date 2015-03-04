@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts
-  resources :comments, only: %i(create update)
-
   with_options defaults: { format: :json } do
     # sideload
     namespace :v1 do
@@ -24,6 +21,12 @@ Rails.application.routes.draw do
       resources :posts, only: %i(index show) do
         resources :comments, only: %i(index)
       end
+    end
+
+    # CRUD
+    namespace :v5 do
+      resources :posts, only: %i(index show)
+      resources :comments, only: %i(create destroy)
     end
   end
 end
