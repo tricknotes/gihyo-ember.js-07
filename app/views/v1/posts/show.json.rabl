@@ -4,5 +4,5 @@ node :post do
 end
 
 node :comments do
-  @post.comments.as_json(only: %i(id text post_id))
+  @post.comments.map {|comment| comment.as_json(only: %i(id text)).merge(:post => comment.post_id) }
 end
