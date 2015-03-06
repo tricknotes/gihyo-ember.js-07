@@ -14,6 +14,7 @@ gem 'rabl'
 gem 'oj'
 gem 'pg'
 gem 'puma'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
